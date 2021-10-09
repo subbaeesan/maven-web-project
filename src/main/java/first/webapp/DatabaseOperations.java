@@ -13,7 +13,7 @@ public class DatabaseOperations {
 	
     private String jdbcURL = "jdbc:mysql://localhost:3306/testing";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "";
+    private String jdbcPassword = "Srimathy2574$";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
         " (?, ?, ?);";

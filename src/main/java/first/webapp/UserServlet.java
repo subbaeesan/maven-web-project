@@ -29,7 +29,7 @@ public class UserServlet extends HttpServlet {
 	
     private String jdbcURL = "jdbc:mysql://localhost:3306/testing";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "";
+    private String jdbcPassword = "Srimathy2574$";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO userdetails2" + "  (name, password, email, language) VALUES " +
         " (?, ?, ?, ?);";
@@ -225,7 +225,7 @@ public class UserServlet extends HttpServlet {
         }
         
         //redirect us back to UserServlet !note: do change the url to your project name
-        response.sendRedirect("http://localhost:8085//lesson14/UserServlet");
+        response.sendRedirect("http://localhost:8090//lesson14/UserServlet");
 	}
 
 	//method to delete user
@@ -240,7 +240,7 @@ public class UserServlet extends HttpServlet {
         }
         
         //redirect us back to UserServlet !note: do change the url to your project name
-        response.sendRedirect("http://localhost:8085//lesson14/UserServlet");
+        response.sendRedirect("http://localhost:8090//lesson14/UserServlet");
 	}
 	
     private void printSQLException(SQLException ex) {
