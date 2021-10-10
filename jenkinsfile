@@ -3,6 +3,8 @@ pipeline {
     stages {
         stage('git repo & clean') {
            steps {
+           build 'Maven-web-project'
+              emailext attachLog: true, body: 'Build completed ', compressLog: true, subject: 'Jenkins Build ', to: 'cvaa@hotmail.com'
               bat "rmdir  /s /q maven-web-project"
                bat "git clone https://github.com/subbaeesan/maven-web-project.git"
                bat "mvn clean -f maven-web-project"
