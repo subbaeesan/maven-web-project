@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage('git repo & clean') {
+           steps {
+           build 'Maven-web-project-pipeline'
+              emailext attachLog: true, body: 'Build completed ', compressLog: true, subject: 'Jenkins Build ', to: 'cvaa@hotmail.com'
+              bat "rmdir  /s /q maven-web-project"
+               bat "git clone https://github.com/subbaeesan/maven-web-project.git"
+               bat "mvn clean -f maven-web-project"
+            }
+        }
+        stage('install') {
+           steps {
+               bat "mvn install -f maven-web-project"
+            }
+        }
+        stage('test') {
+            steps {
+                bat "mvn test -f maven-web-project"
+            }
+        }
+        stage('package') {
+            steps {
+                bat "mvn package -f maven-web-project"
+            }
+        }
+    }
+}
